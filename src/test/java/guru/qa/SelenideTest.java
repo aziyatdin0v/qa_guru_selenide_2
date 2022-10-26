@@ -23,7 +23,6 @@ public class SelenideTest {
         $(byText("Solutions")).hover();
         $(byText("Enterprise")).click();
         $("h1").shouldHave(text("Build like the best"));
-
     }
 
     @Test
@@ -35,7 +34,6 @@ public class SelenideTest {
         $("#column-a").dragAndDropTo("#column-b");
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
-
     }
 
     @Test

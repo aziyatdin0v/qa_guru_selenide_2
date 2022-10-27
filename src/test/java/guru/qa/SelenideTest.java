@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import com.codeborne.selenide.Configuration;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -13,8 +15,11 @@ public class SelenideTest {
 
     @BeforeAll
     static void setUp() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        Configuration.browserCapabilities = capabilities;
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
+        Configuration.browser = "firefox";
     }
     @Test
     @DisplayName("Проверить, что страница SoftAssertions->Enterprise содержит надпись 'Build like the best'")

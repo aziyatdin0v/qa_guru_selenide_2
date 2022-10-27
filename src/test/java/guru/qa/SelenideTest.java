@@ -15,8 +15,6 @@ public class SelenideTest {
 
     @BeforeAll
     static void setUp() {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        Configuration.browserCapabilities = capabilities;
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "firefox";
